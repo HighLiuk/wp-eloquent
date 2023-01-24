@@ -463,11 +463,11 @@ class Post extends Model implements WpEloquentPost
      * @return int|null
      * @todo Fix php 8.0 memory issue on thumbnail_meta relationship.
      */
-    public function getThumbnailIdAttribute(): ?int
+    public function getThumbnailIdAttribute(): int
     {
-        return (int) ($meta = $this->getThumbnailMeta())
-                        ? $meta->meta_value
-                        : 0;
+        return ($meta = $this->getThumbnailMeta())
+                    ? (int) $meta->meta_value
+                    : 0;
     }
     
     /**
