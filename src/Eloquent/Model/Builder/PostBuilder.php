@@ -90,33 +90,43 @@ class PostBuilder extends Builder
     }
 
     /**
+     * @param string $term
+     * @param bool $searchTaxonomies
      * @param mixed $term
      * @return PostBuilder
      */
-    public function search($term = false)
+    public function search(string $term, bool $searchTaxonomies = true)
     {
-        if (empty($term)) {
-            return $this;
-        }
-
-        $terms = is_string($term) ? explode(' ', $term) : $term;
-        
-        $terms = collect($terms)->map(function ($term) {
-            return trim(str_replace('%', '', $term));
-        })->filter()->map(function ($term) {
-            return '%' . $term . '%';
-        });
+        $terms = collect(explode(' ', $term))
+                    ->map(fn ($term) => trim(str_replace('%', '', $term)))
+                    ->filter()
+                    ->unique()
+                    ->map(fn ($term) => "%{$term}%");
 
         if ($terms->isEmpty()) {
             return $this;
         }
 
-        return $this->where(function ($query) use ($terms) {
+        return $this->where(function ($query) use ($terms, $searchTaxonomies) {
             $terms->each(function ($term) use ($query) {
                 $query->orWhere('post_title', 'like', $term)
                     ->orWhere('post_excerpt', 'like', $term)
                     ->orWhere('post_content', 'like', $term);
             });
+
+            if ($searchTaxonomies) {
+                $query->orWhereHas(
+                    'taxonomies',
+                    fn ($q) => $q->whereHas(
+                        'term',
+                        fn (Builder $q) => $q->where(function ($query) use ($terms) {
+                            $terms->each(function ($term) use ($query) {
+                                $query->orWhere('name', 'like', $term);
+                            });
+                        })
+                    )
+                );
+            }
         });
     }
 

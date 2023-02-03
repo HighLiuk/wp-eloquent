@@ -314,11 +314,11 @@ class Post extends Model implements WpEloquentPost
         $mainCategory = 'Uncategorized';
 
         if (!empty($this->terms)) {
-            $taxonomies = array_values($this->terms);
+            $taxonomies = $this->terms->values();
 
-            if (!empty($taxonomies[0])) {
-                $terms = array_values($taxonomies[0]);
-                $mainCategory = $terms[0];
+            if ($taxonomy = $taxonomies->first()) {
+                $terms = $taxonomy->values();
+                $mainCategory = $terms->first() ?: $mainCategory;
             }
         }
 
