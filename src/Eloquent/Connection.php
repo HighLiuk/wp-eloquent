@@ -191,7 +191,7 @@ class Connection implements ConnectionInterface
         $result = $this->db->get_results($query);
 
         if ($result === false || $this->db->last_error) {
-            dd($query);
+            error_log($this->db->last_error);
             throw new QueryException($query, $bindings, new \Exception($this->db->last_error));
         }
 
