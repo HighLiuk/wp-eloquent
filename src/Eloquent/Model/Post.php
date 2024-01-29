@@ -314,11 +314,11 @@ class Post extends Model implements WpEloquentPost
         $mainCategory = 'Uncategorized';
 
         if (!empty($this->terms)) {
-            $taxonomies = array_values($this->terms);
+            $taxonomies = $this->terms->values();
 
-            if (!empty($taxonomies[0])) {
-                $terms = array_values($taxonomies[0]);
-                $mainCategory = $terms[0];
+            if ($taxonomy = $taxonomies->first()) {
+                $terms = $taxonomy->values();
+                $mainCategory = $terms->first() ?: $mainCategory;
             }
         }
 
@@ -463,13 +463,13 @@ class Post extends Model implements WpEloquentPost
      * @return int|null
      * @todo Fix php 8.0 memory issue on thumbnail_meta relationship.
      */
-    public function getThumbnailIdAttribute(): ?int
+    public function getThumbnailIdAttribute(): int
     {
-        return (int) ($meta = $this->getThumbnailMeta())
-                        ? $meta->meta_value
-                        : 0;
+        return ($meta = $this->getThumbnailMeta())
+                    ? (int) $meta->meta_value
+                    : 0;
     }
-    
+
     /**
      * Get the post thumbnail alt or the post title if not set.
      * If the post has no thubnail, return empty string.
@@ -521,7 +521,7 @@ class Post extends Model implements WpEloquentPost
     {
         return get_permalink($this->id, $leavename);
     }
-    
+
     /**
      * Get the ThumbnailMeta associated with this post.
      *

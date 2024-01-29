@@ -64,7 +64,7 @@ class PostBuilder extends Builder
     {
         return $this->where('post_name', $slug);
     }
-    
+
     /**
      * @param string $postParentId
      * @return PostBuilder
@@ -76,47 +76,71 @@ class PostBuilder extends Builder
 
     /**
      * @param string $taxonomy
-     * @param mixed $terms
+     * @param array|string|int $terms
+     * @param string $column
      * @return PostBuilder
      */
-    public function taxonomy($taxonomy, $terms)
+    public function taxonomy(string $taxonomy, $terms, $column = 'slug')
     {
-        return $this->whereHas('taxonomies', function ($query) use ($taxonomy, $terms) {
-            $query->where('taxonomy', $taxonomy)
-                ->whereHas('term', function ($query) use ($terms) {
-                    $query->whereIn('slug', is_array($terms) ? $terms : [$terms]);
-                });
-        });
+        return $this->whereHas(
+            'taxonomies',
+            fn ($query) => $query
+                ->where('taxonomy', $taxonomy)
+                ->whereHas(
+                    'term',
+                    fn ($query) => $query->whereIn($column, (array) $terms)
+                )
+        );
     }
 
     /**
+     * @param string $taxonomy
+     * @param mixed $terms
+     * @return PostBuilder
+     */
+    public function taxonomyId($taxonomy, $ids)
+    {
+        return $this->taxonomy($taxonomy, $ids, 'term_id');
+    }
+
+    /**
+     * @param string $term
+     * @param bool $searchTaxonomies
      * @param mixed $term
      * @return PostBuilder
      */
-    public function search($term = false)
+    public function search(string $term, bool $searchTaxonomies = true)
     {
-        if (empty($term)) {
-            return $this;
-        }
-
-        $terms = is_string($term) ? explode(' ', $term) : $term;
-        
-        $terms = collect($terms)->map(function ($term) {
-            return trim(str_replace('%', '', $term));
-        })->filter()->map(function ($term) {
-            return '%' . $term . '%';
-        });
+        $terms = collect(explode(' ', $term))
+                    ->map(fn ($term) => trim(str_replace('%', '', $term)))
+                    ->filter()
+                    ->unique()
+                    ->map(fn ($term) => "%{$term}%");
 
         if ($terms->isEmpty()) {
             return $this;
         }
 
-        return $this->where(function ($query) use ($terms) {
+        return $this->where(function ($query) use ($terms, $searchTaxonomies) {
             $terms->each(function ($term) use ($query) {
                 $query->orWhere('post_title', 'like', $term)
                     ->orWhere('post_excerpt', 'like', $term)
                     ->orWhere('post_content', 'like', $term);
             });
+
+            if ($searchTaxonomies) {
+                $query->orWhereHas(
+                    'taxonomies',
+                    fn ($q) => $q->whereHas(
+                        'term',
+                        fn (Builder $q) => $q->where(function ($query) use ($terms) {
+                            $terms->each(function ($term) use ($query) {
+                                $query->orWhere('name', 'like', $term);
+                            });
+                        })
+                    )
+                );
+            }
         });
     }
 
@@ -142,7 +166,7 @@ class PostBuilder extends Builder
 
     /**
      * Filter the query to include the given post ids, in the given order.
-     * 
+     *
      * @param array   $ids
      */
     public function whereIds(array $ids)
@@ -152,10 +176,10 @@ class PostBuilder extends Builder
                 : $this->whereIn('ID', $ids)
                     ->orderByRaw(sprintf('FIELD(ID, %s)', implode(',', $ids)));
     }
-    
+
     /**
      * Filter the query to include the given post ids, in the given order.
-     * 
+     *
      * @deprecated Use whereIds() instead.
      */
     public function ids(array $ids)
