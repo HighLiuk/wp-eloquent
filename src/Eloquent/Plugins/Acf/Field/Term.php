@@ -1,9 +1,9 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf\Field;
+namespace HighLiuk\Eloquent\Plugins\Acf\Field;
 
-use AmphiBee\Eloquent\Plugins\Acf\FieldInterface;
-use AmphiBee\Eloquent\Model\Post;
+use HighLiuk\Eloquent\Plugins\Acf\FieldInterface;
+use HighLiuk\Eloquent\Model\Post;
 use Illuminate\Support\Collection;
 
 /**
@@ -19,7 +19,7 @@ class Term extends BasicField implements FieldInterface
     protected $items;
 
     /**
-     * @var \AmphiBee\Eloquent\Model\Term
+     * @var \HighLiuk\Eloquent\Model\Term
      */
     protected $term;
 
@@ -29,7 +29,7 @@ class Term extends BasicField implements FieldInterface
     public function __construct(Post $post)
     {
         parent::__construct($post);
-        $this->term = new \AmphiBee\Eloquent\Model\Term();
+        $this->term = new \HighLiuk\Eloquent\Model\Term();
         $this->term->setConnection($post->getConnectionName());
     }
 

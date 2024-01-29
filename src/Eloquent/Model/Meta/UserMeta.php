@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model\User;
+use HighLiuk\Eloquent\Model\User;
 
 /**
  * Class UserMeta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Mickael Burguet <www.rundef.com>
  * @author Junior Grossi <juniorgro@gmail.com>
  */

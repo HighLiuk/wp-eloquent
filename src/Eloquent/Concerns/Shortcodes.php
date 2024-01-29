@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
 use Thunder\Shortcode\Parser\ParserInterface;
 use Thunder\Shortcode\Parser\RegularParser;
@@ -9,7 +9,7 @@ use Thunder\Shortcode\ShortcodeFacade;
 /**
  * Trait ShortcodesTrait
  *
- * @package AmphiBee\Eloquent\Traits
+ * @package HighLiuk\Eloquent\Traits
  * @author Mickael Burguet <www.rundef.com>
  * @author Junior Grossi <juniorgro@gmail.com>
  */

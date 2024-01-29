@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
 use Illuminate\Support\Arr;
 
 /**
  * Class MenuItem
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class MenuItem extends Post

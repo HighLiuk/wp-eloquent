@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
 use Illuminate\Database\Query\Builder as EloquentBuilder;
 

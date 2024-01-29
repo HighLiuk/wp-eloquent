@@ -1,19 +1,19 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Model;
-use AmphiBee\Eloquent\Concerns\Aliases;
-use AmphiBee\Eloquent\Concerns\MetaFields;
-use AmphiBee\Eloquent\Model\Builder\TermBuilder;
-use AmphiBee\Eloquent\Concerns\AdvancedCustomFieldsTerms;
+use HighLiuk\Eloquent\Model;
+use HighLiuk\Eloquent\Concerns\Aliases;
+use HighLiuk\Eloquent\Concerns\MetaFields;
+use HighLiuk\Eloquent\Model\Builder\TermBuilder;
+use HighLiuk\Eloquent\Concerns\AdvancedCustomFieldsTerms;
 
 /**
  * Class Term.
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Term extends Model

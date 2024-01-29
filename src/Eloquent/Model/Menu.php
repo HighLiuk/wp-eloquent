@@ -1,11 +1,11 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
 /**
  * Class Menu
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Yoram de Langen <yoramdelangen@gmail.com>
  * @author Junior Grossi <juniorgro@gmail.com>
  */

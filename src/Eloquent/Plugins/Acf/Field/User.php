@@ -1,9 +1,9 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf\Field;
+namespace HighLiuk\Eloquent\Plugins\Acf\Field;
 
-use AmphiBee\Eloquent\Plugins\Acf\FieldInterface;
-use AmphiBee\Eloquent\Model\Post;
+use HighLiuk\Eloquent\Plugins\Acf\FieldInterface;
+use HighLiuk\Eloquent\Model\Post;
 
 /**
  * Class User.
@@ -13,12 +13,12 @@ use AmphiBee\Eloquent\Model\Post;
 class User extends BasicField implements FieldInterface
 {
     /**
-     * @var \AmphiBee\Eloquent\Model\User
+     * @var \HighLiuk\Eloquent\Model\User
      */
     protected $user;
 
     /**
-     * @var \AmphiBee\Eloquent\Model\User
+     * @var \HighLiuk\Eloquent\Model\User
      */
     protected $value;
 
@@ -28,7 +28,7 @@ class User extends BasicField implements FieldInterface
     public function __construct(Post $post)
     {
         parent::__construct($post);
-        $this->user = new \AmphiBee\Eloquent\Model\User();
+        $this->user = new \HighLiuk\Eloquent\Model\User();
         $this->user->setConnection($post->getConnectionName());
     }
 
@@ -42,7 +42,7 @@ class User extends BasicField implements FieldInterface
     }
 
     /**
-     * @return \AmphiBee\Eloquent\Model\User
+     * @return \HighLiuk\Eloquent\Model\User
      */
     public function get()
     {

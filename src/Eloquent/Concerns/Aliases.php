@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
 use Illuminate\Support\Arr;
 
 /**
  * Trait AliasesTrait
  *
- * @package AmphiBee\Eloquent\Traits
+ * @package HighLiuk\Eloquent\Traits
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 trait Aliases

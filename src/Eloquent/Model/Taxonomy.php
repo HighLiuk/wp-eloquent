@@ -1,19 +1,19 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Model;
-use AmphiBee\Eloquent\Connection;
-use AmphiBee\Eloquent\Concerns\Aliases;
-use AmphiBee\Eloquent\Model\Meta\TermMeta;
-use AmphiBee\Eloquent\Model\Builder\TaxonomyBuilder;
+use HighLiuk\Eloquent\Model;
+use HighLiuk\Eloquent\Connection;
+use HighLiuk\Eloquent\Concerns\Aliases;
+use HighLiuk\Eloquent\Model\Meta\TermMeta;
+use HighLiuk\Eloquent\Model\Builder\TaxonomyBuilder;
 
 /**
  * Class Taxonomy
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Taxonomy extends Model

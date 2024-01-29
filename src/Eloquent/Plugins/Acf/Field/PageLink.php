@@ -1,8 +1,8 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf\Field;
+namespace HighLiuk\Eloquent\Plugins\Acf\Field;
 
-use AmphiBee\Eloquent\Plugins\Acf\FieldInterface;
+use HighLiuk\Eloquent\Plugins\Acf\FieldInterface;
 
 /**
  * Class PageLink.

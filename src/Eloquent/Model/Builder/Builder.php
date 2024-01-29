@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Builder;
+namespace HighLiuk\Eloquent\Model\Builder;
 
 use Illuminate\Database\Eloquent\Builder as BaseBuilder;
 
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder as BaseBuilder;
  * Class Builder
  *
  * @author Thomas Georgel <thomas@hydrat.agency>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Builder extends BaseBuilder

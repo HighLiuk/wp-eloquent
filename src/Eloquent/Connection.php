@@ -1,8 +1,8 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
-use AmphiBee\Eloquent\Manager as Capsule;
+use HighLiuk\Eloquent\Manager as Capsule;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Query\Grammars\Grammar as QueryGrammar;
@@ -14,8 +14,8 @@ use Illuminate\Support\Arr;
 /**
  * Connection Resolver
  *
- * @package AmphiBee\Eloquent
- * @author AmphiBee <hello@amphibee.fr>
+ * @package HighLiuk\Eloquent
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Connection implements ConnectionInterface

@@ -1,8 +1,8 @@
 <?php
 
-namespace AmphiBee\Eloquent\Facades;
+namespace HighLiuk\Eloquent\Facades;
 
-use AmphiBee\Eloquent\Database;
+use HighLiuk\Eloquent\Database;
 use Illuminate\Support\Facades\Facade;
 
 /**

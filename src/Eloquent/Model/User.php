@@ -1,23 +1,23 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Concerns\AdvancedCustomFields;
-use AmphiBee\Eloquent\Concerns\Aliases;
-use AmphiBee\Eloquent\Concerns\MetaFields;
-use AmphiBee\Eloquent\Concerns\OrderScopes;
-use AmphiBee\Eloquent\Model;
+use HighLiuk\Eloquent\Concerns\AdvancedCustomFields;
+use HighLiuk\Eloquent\Concerns\Aliases;
+use HighLiuk\Eloquent\Concerns\MetaFields;
+use HighLiuk\Eloquent\Concerns\OrderScopes;
+use HighLiuk\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 
 /**
  * Class User
  *
- * @package AmphiBee\Eloquent
+ * @package HighLiuk\Eloquent
  * @author Ashwin Sureshkumar <ashwin.sureshkumar@gmail.com>
  * @author Mickael Burguet <www.rundef.com>
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class User extends Model implements Authenticatable, CanResetPassword

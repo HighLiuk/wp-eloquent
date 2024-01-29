@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Collection;
+namespace HighLiuk\Eloquent\Model\Collection;
 
 use Illuminate\Database\Eloquent\Collection;
 

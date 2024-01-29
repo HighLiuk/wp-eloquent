@@ -1,14 +1,14 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model\Term;
+use HighLiuk\Eloquent\Model\Term;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class TermMeta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class TermMeta extends Meta

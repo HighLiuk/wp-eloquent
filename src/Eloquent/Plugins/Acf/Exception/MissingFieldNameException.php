@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf\Exception;
+namespace HighLiuk\Eloquent\Plugins\Acf\Exception;
 
 /**
  * Class MissingFieldNameException.

@@ -1,9 +1,9 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf;
+namespace HighLiuk\Eloquent\Plugins\Acf;
 
-use AmphiBee\Eloquent\Plugins\Acf\Exception\MissingFieldNameException;
-use AmphiBee\Eloquent\Model;
+use HighLiuk\Eloquent\Plugins\Acf\Exception\MissingFieldNameException;
+use HighLiuk\Eloquent\Model;
 use Illuminate\Support\Str;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
 use Illuminate\Database\Eloquent\Builder;
 use UnexpectedValueException;
@@ -8,7 +8,7 @@ use UnexpectedValueException;
 /**
  * Trait HasMetaFields
  *
- * @package AmphiBee\Eloquent\Traits
+ * @package HighLiuk\Eloquent\Traits
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 trait MetaFields
@@ -17,10 +17,10 @@ trait MetaFields
      * @var array
      */
     protected $builtInClasses = [
-        \AmphiBee\Eloquent\Model\Comment::class => \AmphiBee\Eloquent\Model\Meta\CommentMeta::class,
-        \AmphiBee\Eloquent\Model\Post::class => \AmphiBee\Eloquent\Model\Meta\PostMeta::class,
-        \AmphiBee\Eloquent\Model\Term::class => \AmphiBee\Eloquent\Model\Meta\TermMeta::class,
-        \AmphiBee\Eloquent\Model\User::class => \AmphiBee\Eloquent\Model\Meta\UserMeta::class,
+        \HighLiuk\Eloquent\Model\Comment::class => \HighLiuk\Eloquent\Model\Meta\CommentMeta::class,
+        \HighLiuk\Eloquent\Model\Post::class => \HighLiuk\Eloquent\Model\Meta\PostMeta::class,
+        \HighLiuk\Eloquent\Model\Term::class => \HighLiuk\Eloquent\Model\Meta\TermMeta::class,
+        \HighLiuk\Eloquent\Model\User::class => \HighLiuk\Eloquent\Model\Meta\UserMeta::class,
     ];
 
     /**
@@ -52,7 +52,7 @@ trait MetaFields
         }
 
         throw new UnexpectedValueException(sprintf(
-            '%s must extends one of AmphiBee\Eloquent built-in models: Comment, Post, Term or User.',
+            '%s must extends one of HighLiuk\Eloquent built-in models: Comment, Post, Term or User.',
             static::class
         ));
     }
@@ -70,7 +70,7 @@ trait MetaFields
         }
 
         throw new UnexpectedValueException(sprintf(
-            '%s must extends one of AmphiBee\Eloquent built-in models: Comment, Post, Term or User.',
+            '%s must extends one of HighLiuk\Eloquent built-in models: Comment, Post, Term or User.',
             static::class
         ));
     }

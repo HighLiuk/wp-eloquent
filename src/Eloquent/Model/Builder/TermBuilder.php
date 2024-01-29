@@ -1,14 +1,14 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Builder;
+namespace HighLiuk\Eloquent\Model\Builder;
 
-use AmphiBee\Eloquent\Connection;
+use HighLiuk\Eloquent\Connection;
 
 /**
  * Class TermBuilder
  *
- * @package AmphiBee\Eloquent
- * @author AmphiBee <hello@amphibee.fr>
+ * @package HighLiuk\Eloquent
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class TermBuilder extends Builder

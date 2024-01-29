@@ -1,14 +1,14 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Model;
+use HighLiuk\Eloquent\Model;
 use Exception;
 
 /**
  * Option class.
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author José CI <josec89@gmail.com>
  * @author Junior Grossi <juniorgro@gmail.com>
  */

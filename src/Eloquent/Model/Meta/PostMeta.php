@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model\Post;
+use HighLiuk\Eloquent\Model\Post;
 
 /**
  * Class PostMeta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class PostMeta extends Meta

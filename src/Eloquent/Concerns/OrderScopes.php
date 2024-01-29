@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
 use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Trait OrderedTrait
  *
- * @package AmphiBee\Eloquent\Traits
+ * @package HighLiuk\Eloquent\Traits
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 trait OrderScopes

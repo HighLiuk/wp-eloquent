@@ -1,8 +1,8 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
-use AmphiBee\Eloquent\Plugins\Acf\AdvancedCustomFields as BaseAdvancedCustomFields;
+use HighLiuk\Eloquent\Plugins\Acf\AdvancedCustomFields as BaseAdvancedCustomFields;
 
 /**
  * Trait HasAcfFields

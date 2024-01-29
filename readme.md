@@ -1,5 +1,4 @@
-WordPress Eloquent Models
-===========================
+# WordPress Eloquent Models
 
 Le composant WordPress Eloquent Model est une boîte à outils complète fournissant un ORM et un générateur de schéma. Il prend en charge MySQL, Postgres, SQL Server et SQLite. Elle traduit les tables WordPress en [modèles compatibles avec Eloquent](https://laravel.com/docs/7.x/eloquent).
 
@@ -7,43 +6,41 @@ La bibliothèque est idéale pour une utilisation avec Bedrock / Sage de Roots.
 
 Plus besoin d'utiliser la vieille classe moisie WP_Query, on entre dans le monde du futur en produisant du code lisible et ré-utilisable ! Des fonctionnalités supplémentaires sont également disponibles pour une expérience d'utilisation personnalisée à WordPress.
 
-
 La librairie assurant la compatibilité avec Eloquent, vous pouvez consulter la [documentation de l'ORM](https://laravel.com/docs/7.x/eloquent) si vous êtes un peu perdu :)
 
 # Sommaire
 
- - [Installation](#installation)
- - [Mise en place](#mise-en-place)
- - [Modèles supportés](#modèles-supportés)
-    - [Posts](#posts)
-    - [Comments](#comments)
-    - [Terms](#terms)
-    - [Users](#users)
-    - [Options](#options)
-    - [Menus](#menus)
- - [Images](#images)
- - [Alias de champs](#alias-de-champs)
- - [Scope personnalisés](#scopes-personnalisés)
- - [Pagination](#pagination)
- - [Meta](#meta)
- - [Requête d'un Post à partir d'un champs personnalisé (Meta)](#requète-dun-post--partir-dun-champs-personnalisé-meta)
- - [Advanced Custom Fields](#advanced-custom-fields)
- - [Création de table](#creation-de-table)
- - [Requètes avancées](#requètes-avancées)
- - [Type de contenu personnalisés](#type-de-contenu-personnalisés)
- - [Modèles personnalisés](#modles-personnalisés)
-    - [Définition du modèle Eloquent](#définition-du-modèle-eloquent)
-    - [Requètes sur modèles personnalisés](#requètes-sur-modèles-personnalisés)
- - [Shortcode](#shortcode)
- - [Logs des requêtes](#logs-des-requêtes)
-
+- [Installation](#installation)
+- [Mise en place](#mise-en-place)
+- [Modèles supportés](#modèles-supportés)
+  - [Posts](#posts)
+  - [Comments](#comments)
+  - [Terms](#terms)
+  - [Users](#users)
+  - [Options](#options)
+  - [Menus](#menus)
+- [Images](#images)
+- [Alias de champs](#alias-de-champs)
+- [Scope personnalisés](#scopes-personnalisés)
+- [Pagination](#pagination)
+- [Meta](#meta)
+- [Requête d'un Post à partir d'un champs personnalisé (Meta)](#requète-dun-post--partir-dun-champs-personnalisé-meta)
+- [Advanced Custom Fields](#advanced-custom-fields)
+- [Création de table](#creation-de-table)
+- [Requètes avancées](#requètes-avancées)
+- [Type de contenu personnalisés](#type-de-contenu-personnalisés)
+- [Modèles personnalisés](#modles-personnalisés)
+  - [Définition du modèle Eloquent](#définition-du-modèle-eloquent)
+  - [Requètes sur modèles personnalisés](#requètes-sur-modèles-personnalisés)
+- [Shortcode](#shortcode)
+- [Logs des requêtes](#logs-des-requêtes)
 
 ## Installation
 
 La méthode d'installation recommandée est [Composer](https://getcomposer.org/).
 
 ```
-composer require amphibee/wordpress-eloquent-models
+composer require highliuk/wordpress-eloquent-models
 ```
 
 ## Mise en place
@@ -52,7 +49,7 @@ La connection à la base de données (via $wpdb) s'effectue au première appel d
 Si vous avez besoin de récupérer l'instance de connection, lancer simplement le code suivant (privilégiez l'usage de `use`) :
 
 ```php
-AmphiBee\Eloquent\Database::instance();
+HighLiuk\Eloquent\Database::instance();
 ```
 
 ## Modèles supportés
@@ -61,7 +58,7 @@ AmphiBee\Eloquent\Database::instance();
 
 ```php
 
-use \AmphiBee\Eloquent\Model\Post;
+use \HighLiuk\Eloquent\Model\Post;
 
 // récupération du post avec l'ID 1
 $post = Post::find(1);
@@ -76,7 +73,7 @@ $post->meta;
 
 ```
 
-***Status***
+**_Status_**
 
 Par défaut, `Post` retourne l'ensemble des articles quelque soit leur status. Cela peut être modifié via un [scope local](https://laravel.com/docs/7.x/eloquent#query-scopes) `published` pour ne retourner que les articles publiés.
 
@@ -90,7 +87,7 @@ Il est également possible de définir le statut en question via le [scope local
 Post::status('draft')->get();
 ```
 
-***Post Types***
+**_Post Types_**
 
 Par défaut, `Post` retourne l'ensemble des types de contenu. Cea peut être surchargé via le [scope local](https://laravel.com/docs/7.x/eloquent#query-scopes#query-scopes) `type`.
 
@@ -102,7 +99,7 @@ Post::type('page')->get();
 
 ```php
 
-use \AmphiBee\Eloquent\Model\Comment;
+use \HighLiuk\Eloquent\Model\Comment;
 
 // récupère le commentaite ayant pour ID 12345
 $comment = Comment::find(12345);
@@ -126,7 +123,7 @@ $post->terms()->where('taxonomy', 'country');
 
 ```php
 
-use \AmphiBee\Eloquent\Model\User;
+use \HighLiuk\Eloquent\Model\User;
 
 // Tous les utilisateurs
 $users = User::get();
@@ -167,7 +164,7 @@ echo $options['home'];
 
 ### Menus
 
-Pour récupérer un menu à partir de son alias, utiliser la syntaxe ci-dessous. Les éléments du menu seront retournés dans une variable `items` (c'est une collection d'objet de type `AmphiBee\Eloquent\Model\MenuItem`).
+Pour récupérer un menu à partir de son alias, utiliser la syntaxe ci-dessous. Les éléments du menu seront retournés dans une variable `items` (c'est une collection d'objet de type `HighLiuk\Eloquent\Model\MenuItem`).
 
 Les types de menu supportés actuellements sont : Pages, Posts, Custom Links et Categories.
 
@@ -188,7 +185,7 @@ La méthode `instance()` retournera les objets correspondant :
 - `Post` instance pour un élément de menu de type `post`;
 - `Page` instance pour un élément de menu de type `page`;
 - `CustomLink` instance pour un élément de menu de type `custom`;
-- `Term` instance pour un élément de menu de type  `category`.
+- `Term` instance pour un élément de menu de type `category`.
 
 #### Multi-levels Menus
 
@@ -205,7 +202,6 @@ Pour grouper les menus par parent, vous pouvez utiliser la méthode `->groupBy()
 
 Pour en savoir plus sur la méthode `groupBy()`, [consulter la documentation de Eloquent](https://laravel.com/docs/5.4/collections#method-groupby).
 
-
 ## Alias de champs
 
 Le modèle `Post` support les alias, donc si vous inspectez un objet `Post` vous pourrez retrouvez des alias dans le tableau statique `$aliases` (tels que `title` pour `post_title` et `content` pour `post_content`.
@@ -218,7 +214,7 @@ $post->title === $post->post_title; // true
 Vous pouvez étendre le modèle `Post` pour créer vos propres. Ajoutez juste vos alias dans le modèle étendu, il héritera automatiquement de ceux définis dans le modèle `Post`:
 
 ```php
-class A extends \AmphiBee\Eloquent\Model\Post
+class A extends \HighLiuk\Eloquent\Model\Post
 {
     protected static $aliases = [
         'foo' => 'post_foo',
@@ -253,9 +249,9 @@ foreach ($posts as $post) {
 
 Pour afficher les liens de paginations, utiliser la méthode `links()` :
 
- ```php
- {{ $posts->links() }}
- ```
+```php
+{{ $posts->links() }}
+```
 
 ## Meta
 
@@ -275,7 +271,7 @@ Pour créer ou mettre à jour les metas données d'un utilisateur, utilisez just
 
 ```php
 $post = Post::find(1);
-$post->saveMeta('username', 'amphibee');
+$post->saveMeta('username', 'highliuk');
 ```
 
 Il est possible de sauvegarder plusieurs metas données en un seul appel :
@@ -283,8 +279,8 @@ Il est possible de sauvegarder plusieurs metas données en un seul appel :
 ```php
 $post = Post::find(1);
 $post->saveMeta([
-    'username' => 'amphibee',
-    'url' => 'https://amphibee.fr',
+    'username' => 'highliuk',
+    'url' => 'https://highliuk.fr',
 ]);
 ```
 
@@ -301,6 +297,7 @@ $trueOrFalse = $post->saveMeta('foo', 'baz'); // boolean
 Il existe différent moyen d'effectuer une requête à partir d'une méta-donnée (meta) en utilisant des scopes sur un modèle `Post` (ou tout autre modèle utilisant le trait `HasMetaFields`) :
 
 Pour vérifier qu'une méta-donnée existe, utiliser le scope `hasMeta()` :
+
 ```
 // Récupère le premier article ayant la méta "featured_article"
 $post = Post::published()->hasMeta('featured_article')->first();
@@ -309,15 +306,15 @@ $post = Post::published()->hasMeta('featured_article')->first();
 Si vous souhaiter cible une méta-donnée avec une valeur spécifique, il est possible d'utiliser le scope `hasMeta()` avec une valeur.
 
 ```php
-// Récupère le premier article ayant une méta "username" et ayant pour valeur "amphibee"
-$post = Post::published()->hasMeta('username', 'amphibee')->first();
+// Récupère le premier article ayant une méta "username" et ayant pour valeur "highliuk"
+$post = Post::published()->hasMeta('username', 'highliuk')->first();
 ```
 
 Il est également possible d'effectuer une requête en définissant plusieurs meta-données et plusieurs valeurs associées en passant un tableau de valeur au scope scope `hasMeta()` :
 
 ```php
-$post = Post::hasMeta(['username' => 'amphibee'])->first();
-$post = Post::hasMeta(['username' => 'amphibee', 'url' => 'amphibee.fr'])->first();
+$post = Post::hasMeta(['username' => 'highliuk'])->first();
+$post = Post::hasMeta(['username' => 'highliuk', 'url' => 'highliuk.fr'])->first();
 // Ou juste en fournissant les clés de méta-données
 $post = Post::hasMeta(['username', 'url'])->first();
 ```
@@ -332,7 +329,6 @@ $post = Post::published()->hasMetaLike('author', 'B GOSSELET')->first();
 $post = Post::published()->hasMetaLike('author', 'N%Leroy')->first();
 ```
 
-
 ## Images
 
 Récupération d'une image depuis un modèle `Post` ou `Page`.
@@ -340,7 +336,7 @@ Récupération d'une image depuis un modèle `Post` ou `Page`.
 ```php
 $post = Post::find(1);
 
-// Récupère une instance de AmphiBee\Eloquent\Model\Meta\ThumbnailMeta.
+// Récupère une instance de HighLiuk\Eloquent\Model\Meta\ThumbnailMeta.
 print_r($post->thumbnail);
 
 // Vous devez afficher l'instance de l'image pour récupérer l'url de l'image d'origine
@@ -360,7 +356,7 @@ if ($post->thumbnail !== null) {
      *     'url' => 'http://localhost/wp-content/uploads/filename-300x300.jpg',
      * ]
      */
-    print_r($post->thumbnail->size(AmphiBee\Eloquent\Model\Meta\ThumbnailMeta::SIZE_THUMBNAIL));
+    print_r($post->thumbnail->size(HighLiuk\Eloquent\Model\Meta\ThumbnailMeta::SIZE_THUMBNAIL));
 
     // http://localhost/wp-content/uploads/filename.jpg
     print_r($post->thumbnail->size('invalid_size'));
@@ -384,19 +380,19 @@ echo $post->acf->website_url; // retourne l'url fournie dans un champs ayant pou
 
 Lorque l'on utilise `$post->acf->website_url`, des requètes additionnels sont exécutées pour récupérer le champs selon l'approche de ACF. Il est possible d'utiliser une méthode spécifique pour éviter ces requêtes additionnelles. Il suffit de renseigner le type de contenu personnalisé utilisé en tant que fonction :
 
- ```php
- // La méthode effectuant des requètes additionnelles
- echo $post->acf->author_username; // c'est un champs relatif à User
+```php
+// La méthode effectuant des requètes additionnelles
+echo $post->acf->author_username; // c'est un champs relatif à User
 
- // Sans requète additionnelle
- echo $post->acf->user('author_username');
- 
- // Autres exemples sans requètes
+// Sans requète additionnelle
+echo $post->acf->user('author_username');
+
+// Autres exemples sans requètes
 echo $post->acf->text('text_field_name');
 echo $post->acf->boolean('boolean_field_name');
- ```
+```
 
- > PS: La méthode doit être appelée au format camel case. Part eemple, pour le champs de type `date_picker` vous devez écrire `$post->acf->datePicker('fieldName')`. La libraire effectue la conversion de camel casse vers snake case pour vous.
+> PS: La méthode doit être appelée au format camel case. Part eemple, pour le champs de type `date_picker` vous devez écrire `$post->acf->datePicker('fieldName')`. La libraire effectue la conversion de camel casse vers snake case pour vous.
 
 ## Création de table
 
@@ -421,7 +417,7 @@ Pour ajouter vos propres méthode à un modèle existant, vous pouvez réaliser 
 ```php
 namespace App\Model;
 
-use \AmphiBee\Eloquent\Model\User as BaseUser;
+use \HighLiuk\Eloquent\Model\User as BaseUser;
 
 class User extends BaseUser {
 
@@ -445,7 +441,7 @@ Un autre exemple serait de définir une nouvelle taxonomie à un article, par ex
 ```php
 namespace App\Model;
 
-user \AmphiBee\Eloquent\Model\Post as BasePost;
+user \HighLiuk\Eloquent\Model\Post as BasePost;
 
 class Post extends BasePost {
 
@@ -463,7 +459,7 @@ Pour accéder au modèle d'un nouveau type de contenu, voici un exemple de ce qu
 ```php
 namespace App\Model;
 
-class CustomPostType extends \AmphiBee\Eloquent\Model\Post {
+class CustomPostType extends \HighLiuk\Eloquent\Model\Post {
     protected $post_type  = 'custom_post_type';
 
     public static function getBySlug(string $slug): self
@@ -485,14 +481,14 @@ Il est également possible de travailler avec des types de contenus personnalis�
 $videos = Post::type('video')->status('publish')->get();
 
 // en définissant sa propore classe
-class Video extends AmphiBee\Eloquent\Model\Post
+class Video extends HighLiuk\Eloquent\Model\Post
 {
     protected $postType = 'video';
 }
 $videos = Video::status('publish')->get();
 ```
 
-En utilisant la méthode `type()`, l'objet retourné sera de type `AmphiBee\Eloquent\Model\Post`. En utilisant son propre modèle, cela permet d'aller plus loin dans les possibilités en pouvant y associer des méthodes et des propriétés personnalisés et en retournant le résultat en tant qu'objet `Video` par exemple.
+En utilisant la méthode `type()`, l'objet retourné sera de type `HighLiuk\Eloquent\Model\Post`. En utilisant son propre modèle, cela permet d'aller plus loin dans les possibilités en pouvant y associer des méthodes et des propriétés personnalisés et en retournant le résultat en tant qu'objet `Video` par exemple.
 
 Type de contenu personnalisé et méta-données :
 
@@ -509,8 +505,6 @@ foreach ($stores as $store) {
 ## Shortcode
 
 Implémentation en cours
-
-
 
 ## Logs des requêtes
 

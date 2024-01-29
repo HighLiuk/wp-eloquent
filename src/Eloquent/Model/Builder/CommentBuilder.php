@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Builder;
+namespace HighLiuk\Eloquent\Model\Builder;
 
 /**
  * Class CommentBuilder

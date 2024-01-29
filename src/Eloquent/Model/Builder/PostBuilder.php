@@ -1,16 +1,16 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Builder;
+namespace HighLiuk\Eloquent\Model\Builder;
 
 use Carbon\Carbon;
-use AmphiBee\Eloquent\Connection;
+use HighLiuk\Eloquent\Connection;
 
 /**
  * Class PostBuilder
  *
  * @package Corcel\Model\Builder
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class PostBuilder extends Builder

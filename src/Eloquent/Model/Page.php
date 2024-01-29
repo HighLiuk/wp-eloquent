@@ -1,16 +1,16 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Builder;
-use AmphiBee\Eloquent\Model\Contract\WpEloquentPost;
+use HighLiuk\Eloquent\Model\Contract\WpEloquentPost;
 
 /**
  * Class Page
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Page extends Post implements WpEloquentPost

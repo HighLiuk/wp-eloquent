@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
 use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
 /**
  * Interface Shortcode
  *
- * @package AmphiBee\Eloquent
+ * @package HighLiuk\Eloquent
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 interface Shortcode

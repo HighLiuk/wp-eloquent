@@ -1,11 +1,11 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
 /**
  * Tag class.
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Mickael Burguet <www.rundef.com>
  */
 class Tag extends Taxonomy

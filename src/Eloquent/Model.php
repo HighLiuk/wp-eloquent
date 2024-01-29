@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

@@ -1,10 +1,10 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf\Field;
+namespace HighLiuk\Eloquent\Plugins\Acf\Field;
 
-use AmphiBee\Eloquent\Plugins\Acf\FieldFactory;
-use AmphiBee\Eloquent\Plugins\Acf\FieldInterface;
-use AmphiBee\Eloquent\Model\Post;
+use HighLiuk\Eloquent\Plugins\Acf\FieldFactory;
+use HighLiuk\Eloquent\Plugins\Acf\FieldInterface;
+use HighLiuk\Eloquent\Model\Post;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 
@@ -76,7 +76,7 @@ class Repeater extends BasicField implements FieldInterface
     {
         $count = (int) $this->fetchValue($fieldName);
         
-        if ($this->postMeta instanceof \AmphiBee\Eloquent\Model\Meta\TermMeta) {
+        if ($this->postMeta instanceof \HighLiuk\Eloquent\Model\Meta\TermMeta) {
             $builder = $this->postMeta->where('term_id', $post->term_id);
         } else {
             $builder = $this->postMeta->where('post_id', $post->ID);

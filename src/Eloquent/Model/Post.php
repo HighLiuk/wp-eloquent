@@ -1,28 +1,28 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Model;
-use AmphiBee\Eloquent\Connection;
+use HighLiuk\Eloquent\Model;
+use HighLiuk\Eloquent\Connection;
 use Illuminate\Support\Collection;
-use AmphiBee\Eloquent\Concerns\Aliases;
+use HighLiuk\Eloquent\Concerns\Aliases;
 use Illuminate\Database\Eloquent\Builder;
-use AmphiBee\Eloquent\Concerns\MetaFields;
-use AmphiBee\Eloquent\Concerns\Shortcodes;
-use AmphiBee\Eloquent\Concerns\OrderScopes;
-use AmphiBee\Eloquent\Model\Meta\ThumbnailMeta;
-use AmphiBee\Eloquent\Concerns\CustomTimestamps;
-use AmphiBee\Eloquent\Model\Builder\PostBuilder;
-use AmphiBee\Eloquent\Concerns\AdvancedCustomFields;
-use AmphiBee\Eloquent\Model\Contract\WpEloquentPost;
+use HighLiuk\Eloquent\Concerns\MetaFields;
+use HighLiuk\Eloquent\Concerns\Shortcodes;
+use HighLiuk\Eloquent\Concerns\OrderScopes;
+use HighLiuk\Eloquent\Model\Meta\ThumbnailMeta;
+use HighLiuk\Eloquent\Concerns\CustomTimestamps;
+use HighLiuk\Eloquent\Model\Builder\PostBuilder;
+use HighLiuk\Eloquent\Concerns\AdvancedCustomFields;
+use HighLiuk\Eloquent\Model\Contract\WpEloquentPost;
 
 /**
  * Class Post
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
  * @author Mickael Burguet <www.rundef.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class Post extends Model implements WpEloquentPost

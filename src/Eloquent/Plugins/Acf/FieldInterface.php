@@ -1,8 +1,8 @@
 <?php
 
-namespace AmphiBee\Eloquent\Plugins\Acf;
+namespace HighLiuk\Eloquent\Plugins\Acf;
 
-use AmphiBee\Eloquent\Model\Post;
+use HighLiuk\Eloquent\Model\Post;
 
 /**
  * Interface FieldInterface.

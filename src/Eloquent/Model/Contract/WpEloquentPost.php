@@ -1,12 +1,12 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Contract;
+namespace HighLiuk\Eloquent\Model\Contract;
 
 /**
  * Trait WpEloquentPost
  *
- * @package AmphiBee\Eloquent
- * @author AmphiBee <hello@amphibee.fr>
+ * @package HighLiuk\Eloquent
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 interface WpEloquentPost

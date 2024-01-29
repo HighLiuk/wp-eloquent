@@ -1,14 +1,14 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
 use Illuminate\Database\ConnectionResolverInterface;
 
 /**
  * Connection Resolver
  *
- * @package AmphiBee\Eloquent
- * @author AmphiBee <hello@amphibee.fr>
+ * @package HighLiuk\Eloquent
+ * @author HighLiuk <hello@highliuk.fr>
  */
 class Resolver implements ConnectionResolverInterface
 {

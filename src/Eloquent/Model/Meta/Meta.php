@@ -1,17 +1,17 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model;
-use AmphiBee\Eloquent\Model\Collection\MetaCollection;
+use HighLiuk\Eloquent\Model;
+use HighLiuk\Eloquent\Model\Collection\MetaCollection;
 use Exception;
 
 /**
  * Class Meta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Junior Grossi <juniorgro@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 abstract class Meta extends Model

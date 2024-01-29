@@ -1,6 +1,6 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Builder;
+namespace HighLiuk\Eloquent\Model\Builder;
 
 /**
  * Class TaxonomyBuilder
@@ -8,7 +8,7 @@ namespace AmphiBee\Eloquent\Model\Builder;
  * @package Corcel
  * @author Junior Grossi <juniorgro@gmail.com>
  * @author Yoram de Langen <yoramdelangen@gmail.com>
- * @author AmphiBee <hello@amphibee.fr>
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class TaxonomyBuilder extends Builder

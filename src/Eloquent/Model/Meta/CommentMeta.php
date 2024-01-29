@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model\Comment;
+use HighLiuk\Eloquent\Model\Comment;
 
 /**
  * Class CommentMeta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class CommentMeta extends Meta

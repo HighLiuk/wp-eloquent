@@ -1,11 +1,11 @@
 <?php
 
-namespace AmphiBee\Eloquent\Concerns;
+namespace HighLiuk\Eloquent\Concerns;
 
 /**
  * Trait CustomTimestamps
  *
- * @package AmphiBee\Eloquent\Traits
+ * @package HighLiuk\Eloquent\Traits
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 trait CustomTimestamps

@@ -1,12 +1,12 @@
 <?php
 
-namespace AmphiBee\Eloquent;
+namespace HighLiuk\Eloquent;
 
 /**
  * Connection Resolver
  *
- * @package AmphiBee\Eloquent
- * @author AmphiBee <hello@amphibee.fr>
+ * @package HighLiuk\Eloquent
+ * @author HighLiuk <hello@highliuk.fr>
  * @author Thomas Georgel <thomas@hydrat.agency>
  */
 class WpdbPdo

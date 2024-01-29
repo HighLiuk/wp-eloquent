@@ -1,14 +1,14 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model\Meta;
+namespace HighLiuk\Eloquent\Model\Meta;
 
-use AmphiBee\Eloquent\Model\Attachment;
+use HighLiuk\Eloquent\Model\Attachment;
 use Illuminate\Support\Arr;
 
 /**
  * Class ThumbnailMeta
  *
- * @package AmphiBee\Eloquent\Model\Meta
+ * @package HighLiuk\Eloquent\Model\Meta
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class ThumbnailMeta extends PostMeta

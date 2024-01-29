@@ -1,13 +1,13 @@
 <?php
 
-namespace AmphiBee\Eloquent\Model;
+namespace HighLiuk\Eloquent\Model;
 
-use AmphiBee\Eloquent\Model;
+use HighLiuk\Eloquent\Model;
 
 /**
  * Class TermRelationship.
  *
- * @package AmphiBee\Eloquent\Model
+ * @package HighLiuk\Eloquent\Model
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 class TermRelationship extends Model
